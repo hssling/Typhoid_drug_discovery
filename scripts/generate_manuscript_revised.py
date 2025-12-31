@@ -492,7 +492,7 @@ def create_revised_manuscript():
         p.paragraph_format.left_indent = Inches(0.25)
     
     # Save
-    output_path = BASE_DIR / 'manuscripts' / 'Manuscript_Typhoid_HDT_REVISED.docx'
+    output_path = BASE_DIR / 'manuscripts' / 'Manuscript_Typhoid_HDT_FINAL.docx'
     doc.save(str(output_path))
     print(f'Created: {output_path}')
     print('Word count: ~3,200')
