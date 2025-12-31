@@ -479,7 +479,7 @@ def create_revised_manuscript():
         'Thompson MG, Corey BW, Si Y, et al. Antibacterial activities of iron chelators against common nosocomial pathogens. Antimicrob Agents Chemother 2012;56(10):5419-5421. PMID: 22850520',
         'Nairz M, Schroll A, Sonnweber T, Weiss G. The struggle for iron - a metal at the host-pathogen interface. Cell Microbiol 2010;12(12):1691-1702. PMID: 20964797',
         'Sehgal SN. Sirolimus: its discovery, biological properties, and mechanism of action. Transplant Proc 2003;35(3 Suppl):7S-14S. PMID: 12742462',
-        'Singhal A, Jie L, Kumar P, et al. Metformin as adjunct antituberculosis therapy. Sci Transl Med 2014;6(263):263ra159. PMID: 25411471',
+        'Lachmandas E, Eckold C, Böhme J, et al. Metformin alters human host responses to Mycobacterium tuberculosis in healthy subjects. J Infect Dis 2019;220(1):139-150. PMID: 30715398',
         'Crawford RW, Rosales-Reyes R, Ramirez-Aguilar ML, et al. Gallstones play a significant role in Salmonella spp. gallbladder colonization and carriage. Proc Natl Acad Sci USA 2010;107(9):4353-4358. PMID: 20176950',
         'Keitel V, Dröge C, Häussinger D. Targeting FXR in cholestasis. Handb Exp Pharmacol 2019;256:299-324. PMID: 31134361',
     ]
