@@ -1,0 +1,56 @@
+# Typhoid HDT Pipeline Configuration
+
+project:
+  name: "Typhoid Host-Directed Therapy Pipeline"
+  author: "Dr. Siddalingaiah H S"
+  version: "1.0.0"
+  date: "2024-12-31"
+
+# Gene signature parameters
+gene_signature:
+  source: "Multi-GEO typhoid transcriptomic meta-analysis"
+  total_genes: 50
+  pathways:
+    - autophagy
+    - inflammasome
+    - macrophage_polarization
+    - iron_homeostasis
+    - cytokine_signaling
+    - nfkb_pathway
+    - phagosome_maturation
+    - oxidative_stress
+
+# Infection phase stratification
+infection_phase:
+  - Acute: "Active infection (days 1-14)"
+  - Carrier: "Chronic gallbladder persistence"
+  - Both: "Relevant to all phases"
+
+# Database versions
+databases:
+  chembl: "v33"
+  opentargets: "24.09"
+  mygene: "v3"
+
+# Target prioritization weights
+scoring:
+  omics_strength: 0.35
+  opentargets_evidence: 0.25
+  druggability_proxy: 0.20
+  pathway_centrality: 0.10
+  replication: 0.10
+
+# GEO datasets
+geo_datasets:
+  - id: "GSE17492"
+    description: "Typhoid blood transcriptomes"
+    samples: 48
+  - id: "GSE22270"
+    description: "Salmonella-infected macrophages"
+    samples: 24
+  - id: "GSE19491"
+    description: "Enteric fever vs controls"
+    samples: 78
+  - id: "GSE114192"
+    description: "Typhoid challenge model"
+    samples: 36

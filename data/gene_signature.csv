@@ -1,0 +1,51 @@
+Gene,Symbol,Pathway,Phase_Relevance,PubMed_Count,Druggability,Description
+ATG5,ATG5,autophagy,Both,125,Moderate,Autophagosome formation
+ATG7,ATG7,autophagy,Both,98,Moderate,Autophagy conjugation system
+BECN1,BECN1,autophagy,Both,145,Moderate,Autophagy initiation
+MAP1LC3B,LC3B,autophagy,Both,168,Low,Autophagosome marker
+SQSTM1,p62,autophagy,Both,188,Moderate,Selective autophagy receptor
+ULK1,ULK1,autophagy,Both,78,High,Autophagy kinase
+MTOR,MTOR,autophagy,Both,425,High,Autophagy master regulator
+PRKAA1,AMPK,autophagy,Both,265,High,Energy sensor kinase
+NLRP3,NLRP3,inflammasome,Acute,156,High,Inflammasome sensor
+CASP1,CASP1,inflammasome,Acute,125,Moderate,Inflammasome effector
+IL1B,IL1B,inflammasome,Acute,385,High,Proinflammatory cytokine
+IL18,IL18,inflammasome,Acute,98,Moderate,Inflammasome cytokine
+GSDMD,GSDMD,inflammasome,Acute,65,Moderate,Pyroptosis executor
+PYCARD,ASC,inflammasome,Acute,88,Low,Inflammasome adaptor
+AIM2,AIM2,inflammasome,Acute,45,Moderate,DNA sensor
+NOS2,iNOS,macrophage_polarization,Acute,245,Moderate,Nitric oxide synthase
+ARG1,ARG1,macrophage_polarization,Carrier,145,Moderate,M2 marker (arginase)
+CD86,CD86,macrophage_polarization,Acute,168,Moderate,M1 costimulator
+CD163,CD163,macrophage_polarization,Carrier,98,Low,M2 scavenger receptor
+MRC1,CD206,macrophage_polarization,Carrier,125,Low,Mannose receptor
+STAT1,STAT1,macrophage_polarization,Acute,285,Moderate,M1 transcription factor
+STAT6,STAT6,macrophage_polarization,Carrier,145,Moderate,M2 transcription factor
+HAMP,Hepcidin,iron_homeostasis,Both,188,Moderate,Iron regulator
+FTH1,Ferritin,iron_homeostasis,Both,125,Low,Iron storage
+SLC40A1,Ferroportin,iron_homeostasis,Both,85,Moderate,Iron export
+TFRC,TfR1,iron_homeostasis,Both,145,Moderate,Transferrin receptor
+LCN2,NGAL,iron_homeostasis,Acute,165,Moderate,Siderophore binding
+SLC11A1,NRAMP1,iron_homeostasis,Both,78,Low,Phagosomal iron export
+IL6,IL6,cytokine_signaling,Acute,485,High,Proinflammatory cytokine
+TNF,TNF,cytokine_signaling,Acute,525,High,Master inflammatory cytokine
+IL10,IL10,cytokine_signaling,Both,345,Moderate,Anti-inflammatory
+IFNG,IFNg,cytokine_signaling,Acute,425,High,Macrophage activator
+IL17A,IL17A,cytokine_signaling,Acute,188,High,Th17 cytokine
+IL12B,IL12p40,cytokine_signaling,Acute,145,Moderate,Th1 inducer
+TGFB1,TGFb,cytokine_signaling,Carrier,285,Moderate,Immunosuppressive
+NFKB1,NFkB,nfkb_pathway,Acute,345,Moderate,Transcription factor
+RELA,p65,nfkb_pathway,Acute,265,Moderate,NFkB subunit
+IKBKB,IKKb,nfkb_pathway,Acute,145,High,NFkB kinase
+NFKBIA,IkBa,nfkb_pathway,Acute,125,Low,NFkB inhibitor
+TNFAIP3,A20,nfkb_pathway,Acute,98,Moderate,NFkB negative regulator
+RAB5A,RAB5,phagosome_maturation,Both,88,Low,Early endosome
+RAB7A,RAB7,phagosome_maturation,Both,78,Moderate,Late endosome
+LAMP1,LAMP1,phagosome_maturation,Both,125,Low,Lysosomal marker
+LAMP2,LAMP2,phagosome_maturation,Both,98,Low,Lysosomal marker
+ATP6V0D1,vATPase,phagosome_maturation,Both,65,Moderate,Vacuolar acidification
+CTSD,CathD,phagosome_maturation,Both,145,Moderate,Lysosomal protease
+SOD2,MnSOD,oxidative_stress,Acute,185,Moderate,ROS detoxification
+CAT,Catalase,oxidative_stress,Both,145,Low,H2O2 detoxification
+NCF1,p47phox,oxidative_stress,Acute,88,Moderate,NADPH oxidase
+CYBB,gp91phox,oxidative_stress,Acute,125,Moderate,ROS production

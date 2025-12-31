@@ -1,0 +1,31 @@
+Drug,Target,Related_Gene,pChEMBL,Phase,Evidence
+Rapamycin,MTOR,MTOR,9.5,4,"mTOR inhibitor, autophagy inducer"
+Everolimus,MTOR,MTOR,9.2,4,mTOR inhibitor
+Temsirolimus,MTOR,MTOR,9.0,4,mTOR inhibitor
+Metformin,AMPK,PRKAA1,5.5,4,"AMPK activator, autophagy"
+AICAR,AMPK,PRKAA1,6.0,2,AMPK activator
+Anakinra,IL1R,IL1B,8.0,4,"IL-1RA, sepsis trials"
+Canakinumab,IL1B,IL1B,9.3,4,Anti-IL1β
+MCC950,NLRP3,NLRP3,8.5,2,NLRP3 inhibitor
+Colchicine,NLRP3,NLRP3,5.8,4,NLRP3 modulator
+Tocilizumab,IL6R,IL6,8.5,4,Anti-IL6R
+Infliximab,TNF,TNF,9.2,4,Anti-TNF (caution in infection)
+Baricitinib,JAK1/2,STAT1,7.8,4,JAK inhibitor
+Ruxolitinib,JAK1/2,STAT1,7.5,4,JAK inhibitor
+IFN-gamma,IFNGR,IFNG,8.0,4,Macrophage activation
+GM-CSF,CSF2R,NOS2,7.5,4,Macrophage function
+M-CSF,CSF1R,CD163,7.2,4,Macrophage differentiation
+Deferasirox,Iron,HAMP,6.5,4,Oral iron chelator
+Deferiprone,Iron,FTH1,6.0,4,Iron chelator
+Deferoxamine,Iron,TFRC,6.8,4,IV iron chelator
+Bortezomib,Proteasome,NFKBIA,8.5,4,IkB stabilizer
+BAY 11-7082,IKK,IKBKB,6.5,1,IKK inhibitor
+Bafilomycin A1,vATPase,ATP6V0D1,8.0,1,Research tool
+Chloroquine,Lysosome,LAMP1,5.5,4,Lysosomal pH (caution)
+Ursodeoxycholic acid,Bile,TGFB1,5.0,4,Gallbladder/carrier
+Atorvastatin,HMGCR,IL6,8.5,4,Anti-inflammatory
+Simvastatin,HMGCR,TNF,8.2,4,Macrophage effects
+Dexamethasone,GR,NFKB1,8.0,4,Anti-inflammatory
+VX-765,CASP1,CASP1,7.5,2,Caspase-1 inhibitor
+Emricasan,Pan-caspase,CASP1,7.0,2,Caspase inhibitor
+Disulfiram,GSDMD,GSDMD,5.5,4,GSDMD inhibitor

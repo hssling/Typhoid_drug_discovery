@@ -1,0 +1,51 @@
+Gene,Symbol,Pathway,Phase_Relevance,PubMed_Count,Druggability,Description,Composite_Score,Rank
+TNF,TNF,cytokine_signaling,Acute,525,High,Master inflammatory cytokine,0.98,1
+IL6,IL6,cytokine_signaling,Acute,485,High,Proinflammatory cytokine,0.978,2
+IFNG,IFNg,cytokine_signaling,Acute,425,High,Macrophage activator,0.974,3
+MTOR,MTOR,autophagy,Both,425,High,Autophagy master regulator,0.969,4
+IL1B,IL1B,inflammasome,Acute,385,High,Proinflammatory cytokine,0.967,5
+PRKAA1,AMPK,autophagy,Both,265,High,Energy sensor kinase,0.87,6
+IL17A,IL17A,cytokine_signaling,Acute,188,High,Th17 cytokine,0.817,7
+NFKB1,NFkB,nfkb_pathway,Acute,345,Moderate,Transcription factor,0.812,8
+NLRP3,NLRP3,inflammasome,Acute,156,High,Inflammasome sensor,0.796,9
+STAT1,STAT1,macrophage_polarization,Acute,285,Moderate,M1 transcription factor,0.789,10
+IL10,IL10,cytokine_signaling,Both,345,Moderate,Anti-inflammatory,0.787,11
+IKBKB,IKKb,nfkb_pathway,Acute,145,High,NFkB kinase,0.777,12
+NOS2,iNOS,macrophage_polarization,Acute,245,Moderate,Nitric oxide synthase,0.759,13
+RELA,p65,nfkb_pathway,Acute,265,Moderate,NFkB subunit,0.754,14
+TGFB1,TGFb,cytokine_signaling,Carrier,285,Moderate,Immunosuppressive,0.724,15
+ULK1,ULK1,autophagy,Both,78,High,Autophagy kinase,0.717,16
+CD86,CD86,macrophage_polarization,Acute,168,Moderate,M1 costimulator,0.7,17
+SQSTM1,p62,autophagy,Both,188,Moderate,Selective autophagy receptor,0.696,18
+LCN2,NGAL,iron_homeostasis,Acute,165,Moderate,Siderophore binding,0.693,19
+SOD2,MnSOD,oxidative_stress,Acute,185,Moderate,ROS detoxification,0.688,20
+HAMP,Hepcidin,iron_homeostasis,Both,188,Moderate,Iron regulator,0.681,21
+IL12B,IL12p40,cytokine_signaling,Acute,145,Moderate,Th1 inducer,0.666,22
+BECN1,BECN1,autophagy,Both,145,Moderate,Autophagy initiation,0.661,23
+CTSD,CathD,phagosome_maturation,Both,145,Moderate,Lysosomal protease,0.656,24
+CASP1,CASP1,inflammasome,Acute,125,Moderate,Inflammasome effector,0.654,25
+TFRC,TfR1,iron_homeostasis,Both,145,Moderate,Transferrin receptor,0.646,26
+ATG5,ATG5,autophagy,Both,125,Moderate,Autophagosome formation,0.644,27
+CYBB,gp91phox,oxidative_stress,Acute,125,Moderate,ROS production,0.639,28
+STAT6,STAT6,macrophage_polarization,Carrier,145,Moderate,M2 transcription factor,0.631,29
+ARG1,ARG1,macrophage_polarization,Carrier,145,Moderate,M2 marker (arginase),0.631,30
+IL18,IL18,inflammasome,Acute,98,Moderate,Inflammasome cytokine,0.63,31
+ATG7,ATG7,autophagy,Both,98,Moderate,Autophagy conjugation system,0.62,32
+TNFAIP3,A20,nfkb_pathway,Acute,98,Moderate,NFkB negative regulator,0.62,33
+NCF1,p47phox,oxidative_stress,Acute,88,Moderate,NADPH oxidase,0.605,34
+GSDMD,GSDMD,inflammasome,Acute,65,Moderate,Pyroptosis executor,0.597,35
+RAB7A,RAB7,phagosome_maturation,Both,78,Moderate,Late endosome,0.596,36
+SLC40A1,Ferroportin,iron_homeostasis,Both,85,Moderate,Iron export,0.593,37
+ATP6V0D1,vATPase,phagosome_maturation,Both,65,Moderate,Vacuolar acidification,0.582,38
+MAP1LC3B,LC3B,autophagy,Both,168,Low,Autophagosome marker,0.578,39
+AIM2,AIM2,inflammasome,Acute,45,Moderate,DNA sensor,0.574,40
+NFKBIA,IkBa,nfkb_pathway,Acute,125,Low,NFkB inhibitor,0.542,41
+LAMP1,LAMP1,phagosome_maturation,Both,125,Low,Lysosomal marker,0.537,42
+FTH1,Ferritin,iron_homeostasis,Both,125,Low,Iron storage,0.527,43
+CAT,Catalase,oxidative_stress,Both,145,Low,H2O2 detoxification,0.524,44
+PYCARD,ASC,inflammasome,Acute,88,Low,Inflammasome adaptor,0.518,45
+LAMP2,LAMP2,phagosome_maturation,Both,98,Low,Lysosomal marker,0.513,46
+MRC1,CD206,macrophage_polarization,Carrier,125,Low,Mannose receptor,0.512,47
+RAB5A,RAB5,phagosome_maturation,Both,88,Low,Early endosome,0.503,48
+CD163,CD163,macrophage_polarization,Carrier,98,Low,M2 scavenger receptor,0.488,49
+SLC11A1,NRAMP1,iron_homeostasis,Both,78,Low,Phagosomal iron export,0.484,50
