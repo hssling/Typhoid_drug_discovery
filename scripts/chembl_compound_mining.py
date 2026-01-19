@@ -90,7 +90,7 @@ def query_activities_for_target(target_chembl_id: str, min_pchembl: float = 6.0)
             'standard_units',
         ])
         
-        return list(results)[:100]  # Limit to top 100
+        return list(results)[:40]  # Limit to top 40 for faster POC training
         
     except Exception as e:
         print(f"  Error querying activities: {e}")
@@ -98,7 +98,7 @@ def query_activities_for_target(target_chembl_id: str, min_pchembl: float = 6.0)
 
 
 def get_molecule_info(molecule_chembl_id: str) -> dict:
-    """Get detailed molecule info including clinical phase."""
+    """Get detailed molecule info including clinical phase and SMILES."""
     if not CHEMBL_AVAILABLE:
         return {}
     
@@ -113,10 +113,20 @@ def get_molecule_info(molecule_chembl_id: str) -> dict:
             'max_phase',
             'molecule_type',
             'first_approval',
+            'molecule_structures', # For SMILES
         ])
         
         results_list = list(result)
-        return results_list[0] if results_list else {}
+        if not results_list:
+            return {}
+            
+        res = results_list[0]
+        # Extract SMILES if available
+        structures = res.get('molecule_structures')
+        if structures:
+            res['canonical_smiles'] = structures.get('canonical_smiles')
+            
+        return res
         
     except Exception as e:
         return {}
@@ -176,6 +186,7 @@ def mine_compounds_for_gene_list(gene_list: list, output_path: Path = None):
                     'Target_Name': target_info.get('pref_name', ''),
                     'Molecule_ChEMBL_ID': mol_id,
                     'Drug_Name': act.get('molecule_pref_name') or mol_info.get('pref_name', ''),
+                    'SMILES': mol_info.get('canonical_smiles', ''),
                     'pChEMBL': act.get('pchembl_value'),
                     'Assay_Type': act.get('standard_type', ''),
                     'Max_Phase': mol_info.get('max_phase', 0),
@@ -185,7 +196,7 @@ def mine_compounds_for_gene_list(gene_list: list, output_path: Path = None):
                 all_compounds.append(compound_entry)
         
         # Rate limiting
-        time.sleep(0.5)
+        time.sleep(0.2)
     
     # Create DataFrame
     df = pd.DataFrame(all_compounds)
@@ -224,12 +235,12 @@ def main():
     else:
         genes_df = pd.read_csv(gene_sig_path)
     
-    # Get top 5 druggable targets for compound mining
+    # Get top 10 targets for compound mining (larger training set for AI)
     if 'Druggability' in genes_df.columns:
         high_drug = genes_df[genes_df['Druggability'].isin(['High', 'Moderate'])]
-        gene_list = high_drug['Symbol'].head(5).tolist()
+        gene_list = high_drug['Symbol'].head(6).tolist()
     else:
-        gene_list = genes_df['Symbol'].head(5).tolist()
+        gene_list = genes_df['Symbol'].head(6).tolist()
     
     print(f"Mining compounds for {len(gene_list)} genes: {gene_list}")
     
