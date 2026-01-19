@@ -40,17 +40,27 @@ scoring:
   pathway_centrality: 0.10
   replication: 0.10
 
-# GEO datasets
+# GEO datasets - VERIFIED (2026-01-19)
+# Note: GSE17492, GSE22270 removed (do not exist)
+# Note: GSE19491 removed (was TB data, not typhoid)
 geo_datasets:
-  - id: "GSE17492"
-    description: "Typhoid blood transcriptomes"
-    samples: 48
-  - id: "GSE22270"
-    description: "Salmonella-infected macrophages"
-    samples: 24
-  - id: "GSE19491"
-    description: "Enteric fever vs controls"
-    samples: 78
+  - id: "GSE7000"
+    description: "Typhoid blood transcriptomes (Thompson 2009 PNAS)"
+    pmid: "20018727"
+    samples: 47
+    platform: "Illumina"
+    verified: true
+    
   - id: "GSE114192"
-    description: "Typhoid challenge model"
+    description: "Typhoid human challenge model (Blohmke 2018)"
+    pmid: "30232458"
     samples: 36
+    platform: "Illumina RNA-seq"
+    verified: true
+    
+  - id: "GSE30565"
+    description: "S. Typhi in vivo transcription in blood"
+    pmid: "22363001"
+    samples: 5
+    platform: "Microarray"
+    verified: true

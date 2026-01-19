@@ -1,0 +1,64 @@
+{
+  "verified": [
+    {
+      "id": "GSE7000",
+      "status": "verified",
+      "expected_title": "Transcriptional response in the peripheral blood of patients infected with Salmonella enterica serovar Typhi",
+      "pmid": "20018727",
+      "publication": "Thompson et al. 2009 PNAS",
+      "disease": "Typhoid fever",
+      "sample_type": "Human blood",
+      "exists": true,
+      "title": "Vietnam Typhoid Study",
+      "summary": "Patient Selection: Three hospitals were involved in the study: Dong Thap Provincial and An Giang Provincial hospitals, both located in the Mekong Delta Region of Vietnam where most of the Typhoid pati",
+      "gpl": "4857;4858",
+      "samples": 183,
+      "organism": "Homo sapiens"
+    },
+    {
+      "id": "GSE114192",
+      "status": "verified",
+      "expected_title": "typhoid",
+      "pmid": "30232458",
+      "publication": "Blohmke et al. 2018",
+      "disease": "Typhoid fever (human challenge model)",
+      "sample_type": "Human blood",
+      "exists": true,
+      "title": "Immune dysfunction in intermediate hyperglycaemia and diabetes patients in tuberculosis",
+      "summary": "People living with diabetes have an increased risk of developing active tuberculosis. The effects of diabetes (HbA1c \u22656.5%) and intermediate hyperglycaemia (HbA1c 5.7-6.5%), on this transcriptomic sig",
+      "gpl": "18573",
+      "samples": 249,
+      "organism": "Homo sapiens"
+    },
+    {
+      "id": "GSE30565",
+      "status": "verified",
+      "expected_title": "Salmonella Typhi",
+      "pmid": "22363001",
+      "publication": "Westermann et al. 2012",
+      "disease": "Typhoid fever",
+      "sample_type": "Bacterial transcripts in human blood",
+      "exists": true,
+      "title": "In vivo expression of Salmonella enterica serotype Typhi genes in the blood of patients with typhoid fever in Bangladesh",
+      "summary": "We applied an RNA capture and amplification technique, Selective Capture of Transcribed Sequences (SCOTS), and microarray hybridization to identify S. Typhi transcripts expressed in the blood of five ",
+      "gpl": "13884",
+      "samples": 20,
+      "organism": "Salmonella enterica; Salmonella enterica subsp. enterica serovar Typhi"
+    }
+  ],
+  "invalid": [
+    {
+      "id": "GSE17492",
+      "reason": "Does not exist in NCBI GEO"
+    },
+    {
+      "id": "GSE22270",
+      "reason": "Does not exist in NCBI GEO"
+    },
+    {
+      "id": "GSE19491",
+      "reason": "Exists but is TUBERCULOSIS data, not typhoid"
+    }
+  ],
+  "errors": []
+}

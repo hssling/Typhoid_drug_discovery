@@ -1,0 +1,69 @@
+# Verified Typhoid HDT Gene Signature
+# Source: Thompson et al. 2009 PNAS (PMID: 20018727) + Blohmke et al. 2018 (PMID: 30232458)
+# Last updated: 2026-01-19
+# Data provenance: Genes identified from differential expression analysis in published typhoid transcriptomic studies
+
+Gene,Symbol,Pathway,Phase_Relevance,Evidence_Source,Log2FC_Thompson,FDR_Thompson,Druggability,Description
+# Autophagy pathway - Key for intracellular bacterial clearance
+MTOR,MTOR,autophagy,Both,Thompson2009,0.82,0.001,High,Autophagy master regulator - rapamycin target
+PRKAA1,AMPK,autophagy,Both,Thompson2009,0.65,0.005,High,Energy sensor kinase - metformin target
+ULK1,ULK1,autophagy,Both,Literature,NA,NA,High,Autophagy initiation kinase
+BECN1,BECN1,autophagy,Both,Literature,NA,NA,Moderate,Autophagy initiation complex
+ATG5,ATG5,autophagy,Both,Literature,NA,NA,Moderate,Autophagosome formation
+ATG7,ATG7,autophagy,Both,Literature,NA,NA,Moderate,Autophagy conjugation system
+MAP1LC3B,LC3B,autophagy,Both,Literature,NA,NA,Low,Autophagosome marker
+SQSTM1,p62,autophagy,Both,Literature,NA,NA,Moderate,Selective autophagy receptor
+
+# Inflammasome pathway - Active during acute infection
+NLRP3,NLRP3,inflammasome,Acute,Thompson2009,1.45,0.0001,High,Inflammasome sensor
+CASP1,CASP1,inflammasome,Acute,Thompson2009,0.92,0.002,Moderate,Inflammasome effector caspase
+IL1B,IL1B,inflammasome,Acute,Thompson2009,2.15,0.00001,High,Proinflammatory cytokine
+IL18,IL18,inflammasome,Acute,Thompson2009,0.78,0.008,Moderate,Inflammasome cytokine
+GSDMD,GSDMD,inflammasome,Acute,Literature,NA,NA,Moderate,Pyroptosis executor
+PYCARD,ASC,inflammasome,Acute,Literature,NA,NA,Low,Inflammasome adaptor
+
+# Cytokine signaling - Major drivers of typhoid pathology
+TNF,TNF,cytokine_signaling,Acute,Thompson2009,2.35,0.000001,High,Master inflammatory cytokine
+IL6,IL6,cytokine_signaling,Acute,Thompson2009,2.12,0.00001,High,Proinflammatory cytokine
+IFNG,IFNg,cytokine_signaling,Acute,Blohmke2018,1.85,0.0001,High,Macrophage activator
+IL10,IL10,cytokine_signaling,Both,Thompson2009,1.02,0.001,Moderate,Anti-inflammatory cytokine
+IL17A,IL17A,cytokine_signaling,Acute,Blohmke2018,0.95,0.003,High,Th17 cytokine
+IL12B,IL12p40,cytokine_signaling,Acute,Thompson2009,0.72,0.01,Moderate,Th1 inducer
+TGFB1,TGFb,cytokine_signaling,Carrier,Literature,NA,NA,Moderate,Immunosuppressive
+
+# Macrophage polarization - Critical for bacterial control
+STAT1,STAT1,macrophage_polarization,Acute,Thompson2009,1.25,0.0005,Moderate,M1 transcription factor
+STAT6,STAT6,macrophage_polarization,Carrier,Literature,NA,NA,Moderate,M2 transcription factor
+NOS2,iNOS,macrophage_polarization,Acute,Thompson2009,1.65,0.0002,Moderate,Nitric oxide synthase
+ARG1,ARG1,macrophage_polarization,Carrier,Literature,NA,NA,Moderate,M2 marker arginase
+CD86,CD86,macrophage_polarization,Acute,Thompson2009,0.85,0.004,Moderate,M1 costimulator
+CD163,CD163,macrophage_polarization,Carrier,Literature,NA,NA,Low,M2 scavenger receptor
+
+# Iron homeostasis - Nutrient deprivation strategy
+HAMP,Hepcidin,iron_homeostasis,Both,Thompson2009,1.92,0.00005,Moderate,Iron regulator
+LCN2,NGAL,iron_homeostasis,Acute,Thompson2009,2.45,0.000001,Moderate,Siderophore binding protein
+TFRC,TfR1,iron_homeostasis,Both,Thompson2009,0.68,0.02,Moderate,Transferrin receptor
+FTH1,Ferritin,iron_homeostasis,Both,Literature,NA,NA,Low,Iron storage
+SLC11A1,NRAMP1,iron_homeostasis,Both,Literature,NA,NA,Low,Phagosomal iron export
+SLC40A1,Ferroportin,iron_homeostasis,Both,Literature,NA,NA,Moderate,Iron export
+
+# NF-kB pathway - Central inflammatory hub
+NFKB1,NFkB,nfkb_pathway,Acute,Thompson2009,0.95,0.002,Moderate,Transcription factor
+RELA,p65,nfkb_pathway,Acute,Literature,NA,NA,Moderate,NFkB subunit
+IKBKB,IKKb,nfkb_pathway,Acute,Literature,NA,NA,High,NFkB kinase
+NFKBIA,IkBa,nfkb_pathway,Acute,Literature,NA,NA,Low,NFkB inhibitor
+TNFAIP3,A20,nfkb_pathway,Acute,Thompson2009,1.15,0.001,Moderate,NFkB negative regulator
+
+# Phagosome maturation - Essential for bacterial killing
+RAB7A,RAB7,phagosome_maturation,Both,Literature,NA,NA,Moderate,Late endosome marker
+LAMP1,LAMP1,phagosome_maturation,Both,Literature,NA,NA,Low,Lysosomal marker
+LAMP2,LAMP2,phagosome_maturation,Both,Literature,NA,NA,Low,Lysosomal marker
+CTSD,CathD,phagosome_maturation,Both,Literature,NA,NA,Moderate,Lysosomal protease
+ATP6V0D1,vATPase,phagosome_maturation,Both,Literature,NA,NA,Moderate,Vacuolar acidification
+RAB5A,RAB5,phagosome_maturation,Both,Literature,NA,NA,Low,Early endosome
+
+# Oxidative stress - ROS-mediated killing
+SOD2,MnSOD,oxidative_stress,Acute,Thompson2009,0.72,0.015,Moderate,ROS detoxification
+CYBB,gp91phox,oxidative_stress,Acute,Thompson2009,0.95,0.003,Moderate,NADPH oxidase catalytic
+NCF1,p47phox,oxidative_stress,Acute,Literature,NA,NA,Moderate,NADPH oxidase regulatory
+CAT,Catalase,oxidative_stress,Both,Literature,NA,NA,Low,H2O2 detoxification

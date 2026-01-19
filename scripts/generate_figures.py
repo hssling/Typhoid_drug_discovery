@@ -13,7 +13,7 @@ plt.style.use('seaborn-v0_8-whitegrid')
 
 def figure1_target_prioritization():
     """Figure 1: Top 20 Target Prioritization with Phase Coloring"""
-    df = pd.read_csv(BASE_DIR / 'outputs' / 'tables' / 'targets_ranked.csv')
+    df = pd.read_csv(BASE_DIR / 'outputs' / 'tables' / 'targets_ranked_authentic.csv')
     top20 = df.head(20)
     
     def get_color(phase):
@@ -34,7 +34,7 @@ def figure1_target_prioritization():
     ax.invert_yaxis()
     
     ax.set_xlabel('Composite Score', fontsize=12, fontweight='bold')
-    ax.set_title('Top 20 Host-Directed Therapy Targets for Typhoid Fever\n(Addressing MDR/XDR Salmonella Typhi)', fontsize=14, fontweight='bold')
+    ax.set_title('Top 20 Host-Directed Therapy Targets for Typhoid Fever\n(Authentic Analysis - Evidence-Based Weights)', fontsize=14, fontweight='bold')
     
     for i, (bar, val) in enumerate(zip(bars, top20['Composite_Score'])):
         ax.text(val + 0.01, i, f'{val:.3f}', va='center', fontsize=9)
@@ -54,14 +54,14 @@ def figure1_target_prioritization():
 
 def figure2_compound_distribution():
     """Figure 2: Compound Distribution"""
-    df = pd.read_csv(BASE_DIR / 'outputs' / 'tables' / 'compounds_ranked.csv')
+    df = pd.read_csv(BASE_DIR / 'outputs' / 'tables' / 'compounds_from_chembl.csv')
     
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
     
-    phase_counts = df['Phase'].value_counts().sort_index(ascending=False)
-    phase_labels = {4: 'FDA Approved', 3: 'Phase III', 2: 'Phase II', 1: 'Phase I/Preclinical'}
+    phase_counts = df['Max_Phase'].value_counts().sort_index(ascending=False)
+    phase_labels = {4: 'FDA Approved', 3: 'Phase III', 2: 'Phase II', 1: 'Phase I', 0: 'Preclinical'}
     
-    colors = ['#27AE60', '#F1C40F', '#E67E22', '#E74C3C']
+    colors = ['#27AE60', '#F1C40F', '#E67E22', '#E74C3C', '#95A5A6']
     wedges, texts, autotexts = axes[0].pie(
         phase_counts.values, 
         labels=[phase_labels.get(p, f'Phase {p}') for p in phase_counts.index],
@@ -70,14 +70,14 @@ def figure2_compound_distribution():
         explode=[0.05 if p == 4 else 0 for p in phase_counts.index],
         shadow=True
     )
-    axes[0].set_title('A. Clinical Development Phase\n(n={})'.format(len(df)), fontsize=12, fontweight='bold')
+    axes[0].set_title('A. Clinical Development Phase (ChEMBL)\n(n={})'.format(len(df)), fontsize=12, fontweight='bold')
     
-    target_counts = df.groupby('Related_Gene').size().sort_values(ascending=True).tail(10)
+    target_counts = df.groupby('Gene').size().sort_values(ascending=True).tail(10)
     axes[1].barh(range(len(target_counts)), target_counts.values, color='teal', edgecolor='black')
     axes[1].set_yticks(range(len(target_counts)))
     axes[1].set_yticklabels(target_counts.index, fontsize=10)
     axes[1].set_xlabel('Number of Compounds', fontsize=11)
-    axes[1].set_title('B. Compounds per Target Gene', fontsize=12, fontweight='bold')
+    axes[1].set_title('B. Top 10 Targets by Compound Count', fontsize=12, fontweight='bold')
     
     for i, v in enumerate(target_counts.values):
         axes[1].text(v + 0.1, i, str(v), va='center', fontsize=9)
@@ -89,9 +89,9 @@ def figure2_compound_distribution():
 
 def figure3_potency_by_target():
     """Figure 3: Compound Potency by Target"""
-    df = pd.read_csv(BASE_DIR / 'outputs' / 'tables' / 'compounds_ranked.csv')
+    df = pd.read_csv(BASE_DIR / 'outputs' / 'tables' / 'compounds_from_chembl.csv')
     
-    potency_by_gene = df.groupby('Related_Gene')['pChEMBL'].agg(['mean', 'max', 'count'])
+    potency_by_gene = df.groupby('Gene')['pChEMBL'].agg(['mean', 'max', 'count'])
     potency_by_gene = potency_by_gene.sort_values('max', ascending=False).head(15)
     
     fig, ax = plt.subplots(figsize=(12, 8))
@@ -104,7 +104,7 @@ def figure3_potency_by_target():
     ax.invert_yaxis()
     
     ax.set_xlabel('Maximum pChEMBL (Higher = More Potent)', fontsize=12, fontweight='bold')
-    ax.set_title('Top 15 Typhoid Targets by Compound Potency', fontsize=14, fontweight='bold')
+    ax.set_title('Top 15 Typhoid Targets by ChEMBL Compound Potency', fontsize=14, fontweight='bold')
     
     ax.axvline(x=6.0, color='red', linestyle='--', alpha=0.7, label='1 µM threshold')
     ax.axvline(x=8.0, color='green', linestyle='--', alpha=0.7, label='10 nM threshold')
@@ -120,7 +120,7 @@ def figure3_potency_by_target():
 
 def figure4_pathway_heatmap():
     """Figure 4: Pathway Analysis"""
-    df = pd.read_csv(BASE_DIR / 'outputs' / 'tables' / 'targets_ranked.csv')
+    df = pd.read_csv(BASE_DIR / 'outputs' / 'tables' / 'targets_ranked_authentic.csv')
     
     fig, axes = plt.subplots(1, 2, figsize=(14, 8))
     
