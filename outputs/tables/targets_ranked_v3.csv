@@ -1,49 +1,49 @@
-Gene,Symbol,Pathway,Phase_Relevance,Evidence_Source,Log2FC_Thompson,FDR_Thompson,Druggability,Description,Network_Hub_Score,V3_Score,V3_Rank
-IL1B,IL1B,inflammasome,Acute,Thompson2009,2.15,1e-05,High,Proinflammatory cytokine,0.9092727272727272,0.9669,1
-IL6,IL6,cytokine_signaling,Acute,Thompson2009,2.12,1e-05,High,Proinflammatory cytokine,1.0,0.955,2
-TNF,TNF,cytokine_signaling,Acute,Thompson2009,2.35,1e-06,High,Master inflammatory cytokine,0.9332727272727273,0.9417,3
-NLRP3,NLRP3,inflammasome,Acute,Thompson2009,1.45,0.0001,High,Inflammasome sensor,0.271090909090909,0.7132,4
-MTOR,MTOR,autophagy,Both,Thompson2009,0.82,0.001,High,Autophagy master regulator - rapamycin target,0.7087272727272728,0.6955,5
-IFNG,IFNg,cytokine_signaling,Acute,Blohmke2018,1.85,0.0001,High,Macrophage activator,0.0,0.677,6
-LCN2,NGAL,iron_homeostasis,Acute,Thompson2009,2.45,1e-06,Moderate,Siderophore binding protein,0.0,0.67,7
-HAMP,Hepcidin,iron_homeostasis,Both,Thompson2009,1.92,5e-05,Moderate,Iron regulator,0.0,0.5977,8
-ULK1,ULK1,autophagy,Both,Literature,,,High,Autophagy initiation kinase,0.1363636363636363,0.5973,9
-IL17A,IL17A,cytokine_signaling,Acute,Blohmke2018,0.95,0.003,High,Th17 cytokine,0.3167272727272727,0.5902,10
-NOS2,iNOS,macrophage_polarization,Acute,Thompson2009,1.65,0.0002,Moderate,Nitric oxide synthase,0.0,0.5606,11
-STAT1,STAT1,macrophage_polarization,Acute,Thompson2009,1.25,0.0005,Moderate,M1 transcription factor,0.29,0.5593,12
-IL10,IL10,cytokine_signaling,Both,Thompson2009,1.02,0.001,Moderate,Anti-inflammatory cytokine,0.5783636363636364,0.5425,13
-BECN1,BECN1,autophagy,Both,Literature,,,Moderate,Autophagy initiation complex,0.3512727272727272,0.5403,14
-IKBKB,IKKb,nfkb_pathway,Acute,Literature,,,High,NFkB kinase,0.0,0.53,15
-PRKAA1,AMPK,autophagy,Both,Thompson2009,0.65,0.005,High,Energy sensor kinase - metformin target,0.0,0.5249,16
-LAMP1,LAMP1,phagosome_maturation,Both,Literature,,,Low,Lysosomal marker,0.7727272727272727,0.517,17
-CASP1,CASP1,inflammasome,Acute,Thompson2009,0.92,0.002,Moderate,Inflammasome effector caspase,0.2832727272727272,0.5161,18
-ATG5,ATG5,autophagy,Both,Literature,,,Moderate,Autophagosome formation,0.2098181818181818,0.512,19
-ATG7,ATG7,autophagy,Both,Literature,,,Moderate,Autophagy conjugation system,0.1910909090909091,0.5082,20
-CD86,CD86,macrophage_polarization,Acute,Thompson2009,0.85,0.004,Moderate,M1 costimulator,0.3365454545454545,0.506,21
-GSDMD,GSDMD,inflammasome,Acute,Literature,,,Moderate,Pyroptosis executor,0.0909090909090909,0.4932,22
-IL18,IL18,inflammasome,Acute,Thompson2009,0.78,0.008,Moderate,Inflammasome cytokine,0.2592727272727272,0.4859,23
-SQSTM1,p62,autophagy,Both,Literature,,,Moderate,Selective autophagy receptor,0.0,0.47,24
-ATP6V0D1,vATPase,phagosome_maturation,Both,Literature,,,Moderate,Vacuolar acidification,0.0,0.4625,25
-RAB7A,RAB7,phagosome_maturation,Both,Literature,,,Moderate,Late endosome marker,0.0,0.4625,26
-CTSD,CathD,phagosome_maturation,Both,Literature,,,Moderate,Lysosomal protease,0.0,0.4625,27
-STAT6,STAT6,macrophage_polarization,Carrier,Literature,,,Moderate,M2 transcription factor,0.2165454545454545,0.4608,28
-ARG1,ARG1,macrophage_polarization,Carrier,Literature,,,Moderate,M2 marker arginase,0.2125454545454545,0.46,29
-TNFAIP3,A20,nfkb_pathway,Acute,Thompson2009,1.15,0.001,Moderate,NFkB negative regulator,0.0,0.4435,30
-SLC40A1,Ferroportin,iron_homeostasis,Both,Literature,,,Moderate,Iron export,0.0,0.44,31
-RELA,p65,nfkb_pathway,Acute,Literature,,,Moderate,NFkB subunit,0.0,0.43,32
-NFKB1,NFkB,nfkb_pathway,Acute,Thompson2009,0.95,0.002,Moderate,Transcription factor,0.0,0.4169,33
-NCF1,p47phox,oxidative_stress,Acute,Literature,,,Moderate,NADPH oxidase regulatory,0.0,0.415,34
-LAMP2,LAMP2,phagosome_maturation,Both,Literature,,,Low,Lysosomal marker,0.1950909090909091,0.4015,35
-IL12B,IL12p40,cytokine_signaling,Acute,Thompson2009,0.72,0.01,Moderate,Th1 inducer,0.0,0.3982,36
-CYBB,gp91phox,oxidative_stress,Acute,Thompson2009,0.95,0.003,Moderate,NADPH oxidase catalytic,0.0,0.3969,37
-TGFB1,TGFb,cytokine_signaling,Carrier,Literature,,,Moderate,Immunosuppressive,0.0,0.395,38
-TFRC,TfR1,iron_homeostasis,Both,Thompson2009,0.68,0.02,Moderate,Transferrin receptor,0.0,0.3847,39
-PYCARD,ASC,inflammasome,Acute,Literature,,,Low,Inflammasome adaptor,0.0,0.375,40
-MAP1LC3B,LC3B,autophagy,Both,Literature,,,Low,Autophagosome marker,0.0,0.37,41
-SOD2,MnSOD,oxidative_stress,Acute,Thompson2009,0.72,0.015,Moderate,ROS detoxification,0.0,0.3644,42
-RAB5A,RAB5,phagosome_maturation,Both,Literature,,,Low,Early endosome,0.0,0.3625,43
-CD163,CD163,macrophage_polarization,Carrier,Literature,,,Low,M2 scavenger receptor,0.1590909090909091,0.3493,44
-FTH1,Ferritin,iron_homeostasis,Both,Literature,,,Low,Iron storage,0.0,0.34,45
-SLC11A1,NRAMP1,iron_homeostasis,Both,Literature,,,Low,Phagosomal iron export,0.0,0.34,46
-NFKBIA,IkBa,nfkb_pathway,Acute,Literature,,,Low,NFkB inhibitor,0.0,0.33,47
-CAT,Catalase,oxidative_stress,Both,Literature,,,Low,H2O2 detoxification,0.0,0.295,48
+Gene,Symbol,Pathway,Phase_Relevance,Evidence_Source,Log2FC_Thompson,FDR_Thompson,Druggability,Description,Network_Hub_Score,Cellular_Specificity_Score,V3_Score,V3_Rank
+IL1B,IL1B,inflammasome,Acute,Thompson2009,2.15,1e-05,High,Proinflammatory cytokine,0.9092727272727272,0.95,0.9519,1
+IL6,IL6,cytokine_signaling,Acute,Thompson2009,2.12,1e-05,High,Proinflammatory cytokine,1.0,0.9,0.92,2
+TNF,TNF,cytokine_signaling,Acute,Thompson2009,2.35,1e-06,High,Master inflammatory cytokine,0.9332727272727273,0.88,0.9027,3
+MTOR,MTOR,autophagy,Both,Thompson2009,0.82,0.001,High,Autophagy master regulator - rapamycin target,0.7087272727272728,0.82,0.7549,4
+NLRP3,NLRP3,inflammasome,Acute,Thompson2009,1.45,0.0001,High,Inflammasome sensor,0.271090909090909,0.91,0.7322,5
+LAMP1,LAMP1,phagosome_maturation,Both,Literature,,,Low,Lysosomal marker,0.7727272727272727,0.92,0.6285,6
+ULK1,ULK1,autophagy,Both,Literature,,,High,Autophagy initiation kinase,0.1363636363636363,0.5,0.5873,7
+IL10,IL10,cytokine_signaling,Both,Thompson2009,1.02,0.001,Moderate,Anti-inflammatory cytokine,0.5783636363636364,0.75,0.5869,8
+LCN2,NGAL,iron_homeostasis,Acute,Thompson2009,2.45,1e-06,Moderate,Siderophore binding protein,0.0,0.5,0.58,9
+CD86,CD86,macrophage_polarization,Acute,Thompson2009,0.85,0.004,Moderate,M1 costimulator,0.3365454545454545,0.85,0.5681,10
+IL17A,IL17A,cytokine_signaling,Acute,Blohmke2018,0.95,0.003,High,Th17 cytokine,0.3167272727272727,0.5,0.5513,11
+BECN1,BECN1,autophagy,Both,Literature,,,Moderate,Autophagy initiation complex,0.3512727272727272,0.5,0.5503,12
+HAMP,Hepcidin,iron_homeostasis,Both,Thompson2009,1.92,5e-05,Moderate,Iron regulator,0.0,0.5,0.5452,13
+STAT1,STAT1,macrophage_polarization,Acute,Thompson2009,1.25,0.0005,Moderate,M1 transcription factor,0.29,0.5,0.5305,14
+PRKAA1,AMPK,autophagy,Both,Thompson2009,0.65,0.005,High,Energy sensor kinase - metformin target,0.0,0.5,0.5299,15
+IFNG,IFNg,cytokine_signaling,Acute,Blohmke2018,1.85,0.0001,High,Macrophage activator,0.0,0.2,0.528,16
+ATG5,ATG5,autophagy,Both,Literature,,,Moderate,Autophagosome formation,0.2098181818181818,0.5,0.522,17
+ATG7,ATG7,autophagy,Both,Literature,,,Moderate,Autophagy conjugation system,0.1910909090909091,0.5,0.5182,18
+NOS2,iNOS,macrophage_polarization,Acute,Thompson2009,1.65,0.0002,Moderate,Nitric oxide synthase,0.0,0.5,0.5121,19
+CASP1,CASP1,inflammasome,Acute,Thompson2009,0.92,0.002,Moderate,Inflammasome effector caspase,0.2832727272727272,0.5,0.5063,20
+STAT6,STAT6,macrophage_polarization,Carrier,Literature,,,Moderate,M2 transcription factor,0.2165454545454545,0.5,0.4933,21
+ARG1,ARG1,macrophage_polarization,Carrier,Literature,,,Moderate,M2 marker arginase,0.2125454545454545,0.5,0.4925,22
+IL18,IL18,inflammasome,Acute,Thompson2009,0.78,0.008,Moderate,Inflammasome cytokine,0.2592727272727272,0.5,0.4846,23
+IKBKB,IKKb,nfkb_pathway,Acute,Literature,,,High,NFkB kinase,0.0,0.5,0.48,24
+SQSTM1,p62,autophagy,Both,Literature,,,Moderate,Selective autophagy receptor,0.0,0.5,0.48,25
+GSDMD,GSDMD,inflammasome,Acute,Literature,,,Moderate,Pyroptosis executor,0.0909090909090909,0.5,0.4782,26
+ATP6V0D1,vATPase,phagosome_maturation,Both,Literature,,,Moderate,Vacuolar acidification,0.0,0.5,0.47,27
+CTSD,CathD,phagosome_maturation,Both,Literature,,,Moderate,Lysosomal protease,0.0,0.5,0.47,28
+RAB7A,RAB7,phagosome_maturation,Both,Literature,,,Moderate,Late endosome marker,0.0,0.5,0.47,29
+SLC40A1,Ferroportin,iron_homeostasis,Both,Literature,,,Moderate,Iron export,0.0,0.5,0.44,30
+LAMP2,LAMP2,phagosome_maturation,Both,Literature,,,Low,Lysosomal marker,0.1950909090909091,0.5,0.429,31
+TGFB1,TGFb,cytokine_signaling,Carrier,Literature,,,Moderate,Immunosuppressive,0.0,0.5,0.42,32
+TNFAIP3,A20,nfkb_pathway,Acute,Thompson2009,1.15,0.001,Moderate,NFkB negative regulator,0.0,0.5,0.409,33
+TFRC,TfR1,iron_homeostasis,Both,Thompson2009,0.68,0.02,Moderate,Transferrin receptor,0.0,0.5,0.4031,34
+CD163,CD163,macrophage_polarization,Carrier,Literature,,,Low,M2 scavenger receptor,0.1590909090909091,0.5,0.4018,35
+RELA,p65,nfkb_pathway,Acute,Literature,,,Moderate,NFkB subunit,0.0,0.5,0.4,36
+MAP1LC3B,LC3B,autophagy,Both,Literature,,,Low,Autophagosome marker,0.0,0.5,0.4,37
+NFKB1,NFkB,nfkb_pathway,Acute,Thompson2009,0.95,0.002,Moderate,Transcription factor,0.0,0.5,0.3913,38
+RAB5A,RAB5,phagosome_maturation,Both,Literature,,,Low,Early endosome,0.0,0.5,0.39,39
+IL12B,IL12p40,cytokine_signaling,Acute,Thompson2009,0.72,0.01,Moderate,Th1 inducer,0.0,0.5,0.3888,40
+PYCARD,ASC,inflammasome,Acute,Literature,,,Low,Inflammasome adaptor,0.0,0.5,0.38,41
+NCF1,p47phox,oxidative_stress,Acute,Literature,,,Moderate,NADPH oxidase regulatory,0.0,0.5,0.38,42
+CYBB,gp91phox,oxidative_stress,Acute,Thompson2009,0.95,0.003,Moderate,NADPH oxidase catalytic,0.0,0.5,0.3679,43
+SLC11A1,NRAMP1,iron_homeostasis,Both,Literature,,,Low,Phagosomal iron export,0.0,0.5,0.36,44
+FTH1,Ferritin,iron_homeostasis,Both,Literature,,,Low,Iron storage,0.0,0.5,0.36,45
+SOD2,MnSOD,oxidative_stress,Acute,Thompson2009,0.72,0.015,Moderate,ROS detoxification,0.0,0.5,0.3463,46
+NFKBIA,IkBa,nfkb_pathway,Acute,Literature,,,Low,NFkB inhibitor,0.0,0.5,0.32,47
+CAT,Catalase,oxidative_stress,Both,Literature,,,Low,H2O2 detoxification,0.0,0.5,0.3,48

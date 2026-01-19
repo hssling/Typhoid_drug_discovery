@@ -18,9 +18,10 @@ BASE_DIR = Path(__file__).parent.parent
 
 
 def load_data():
-    """Load gene signature and network scores."""
+    """Load gene signature, network scores, and single-cell specificity."""
     sig_path = BASE_DIR / 'data' / 'gene_signature_verified.csv'
     net_path = BASE_DIR / 'outputs' / 'tables' / 'v3_network_scores.csv'
+    sc_path = BASE_DIR / 'outputs' / 'tables' / 'v3_single_cell_scores.csv'
     
     if not sig_path.exists():
         raise FileNotFoundError("Verified gene signature not found.")
@@ -28,31 +29,34 @@ def load_data():
     # Load signature
     genes_df = pd.read_csv(sig_path, comment='#')
     
-    # Load network scores if available
+    # Merge Network scores
     if net_path.exists():
         net_df = pd.read_csv(net_path)
         genes_df = pd.merge(genes_df, net_df[['Symbol', 'Network_Hub_Score']], on='Symbol', how='left')
         genes_df['Network_Hub_Score'] = genes_df['Network_Hub_Score'].fillna(0)
-    else:
-        print("Warning: Network scores not found. Hub score will be 0.")
-        genes_df['Network_Hub_Score'] = 0
+    
+    # Merge Single-Cell scores
+    if sc_path.exists():
+        sc_df = pd.read_csv(sc_path)
+        genes_df = pd.merge(genes_df, sc_df[['Symbol', 'Cellular_Specificity_Score']], on='Symbol', how='left')
+        genes_df['Cellular_Specificity_Score'] = genes_df['Cellular_Specificity_Score'].fillna(0.5)
         
     return genes_df
 
 
 def calculate_v3_score(row):
     """
-    Advanced Priority Scoring (v3.0)
+    Consolidated Priority Scoring (v3.0 Final)
     
-    Weights:
-    - DE Evidence (Transcriptomics): 30%
+    Weights (Fully Balanced):
+    - DE Evidence (Bulk Transcriptomics): 20%
     - Network Hub Score (Interactome): 20%
-    - Druggability (ChEMBL): 25%
-    - Pathway Relevance: 15%
-    - Clinical Phase/Relevance: 10%
+    - Cellular Specificity (Single-Cell): 20%
+    - Druggability (ChEMBL): 20%
+    - Pathway Relevance: 20%
     """
     
-    # 1. DE Score (30%)
+    # 1. DE Score (20%)
     log2fc = row.get('Log2FC_Thompson', 0)
     fdr = row.get('FDR_Thompson', 0.05)
     if pd.notna(log2fc) and pd.notna(fdr) and fdr > 0:
@@ -61,14 +65,17 @@ def calculate_v3_score(row):
     else:
         de_score = 0.3 # Baseline
         
-    # 2. Network Hub Score (20%) - Already scaled 0-1
+    # 2. Network Hub Score (20%)
     net_score = float(row.get('Network_Hub_Score', 0))
     
-    # 3. Druggability (25%)
+    # 3. Cellular Specificity (20%)
+    sc_score = float(row.get('Cellular_Specificity_Score', 0.5))
+    
+    # 4. Druggability (20%)
     drug_map = {'High': 1.0, 'Moderate': 0.6, 'Low': 0.2}
     druggability = drug_map.get(row.get('Druggability', 'Moderate'), 0.5)
     
-    # 4. Pathway Importance (15%)
+    # 5. Pathway Importance (20%)
     pathway_weights = {
         'autophagy': 1.0, 'phagosome_maturation': 0.95, 'inflammasome': 0.9,
         'macrophage_polarization': 0.85, 'iron_homeostasis': 0.8,
@@ -76,17 +83,13 @@ def calculate_v3_score(row):
     }
     pathway = pathway_weights.get(row.get('Pathway', ''), 0.4)
     
-    # 5. Phase Applicability (10%)
-    phase_map = {'Acute': 1.0, 'Both': 0.8, 'Carrier': 0.5}
-    phase_score = phase_map.get(row.get('Phase_Relevance', 'Both'), 0.7)
-    
-    # v3.0 Composite
+    # v3.0 Final Composite
     composite = (
-        0.30 * de_score +
+        0.20 * de_score +
         0.20 * net_score +
-        0.25 * druggability +
-        0.15 * pathway +
-        0.10 * phase_score
+        0.20 * sc_score +
+        0.20 * druggability +
+        0.20 * pathway
     )
     
     return round(composite, 4)
