@@ -23,3 +23,13 @@ htmlcov/
 # OS
 .DS_Store
 Thumbs.db
+
+# Project Specific
+.env
+kaggle.json
+kaggle_upload/
+.gemini/
+.agent/
+brain/
+manuscripts/
+submission/

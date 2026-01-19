@@ -1,26 +1,23 @@
-# Core Data Science
-pandas==2.2.0
-numpy==1.26.4
-matplotlib==3.8.2
-seaborn==0.13.1
-pyyaml==6.0.1
-requests==2.31.0
-
-# Network Medicine
-networkx==3.2.1
+# Core Discovery & Data
+pandas
+numpy
+matplotlib
+seaborn
+pyyaml
+requests
+networkx
 
 # Structural Bioinformatics
-rdkit==2025.9.3
-requests
+rdkit
 
 # Interactive Dashboard
-streamlit==1.30.0
-plotly==5.18.0
+streamlit
+plotly
 
 # Document Generation
-python-docx==1.1.0
+python-docx
 
-# Deep Learning (Phase 10)
+# Deep Learning
 torch
 torch-geometric
 scikit-learn
