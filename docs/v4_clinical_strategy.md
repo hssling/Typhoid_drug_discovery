@@ -24,6 +24,15 @@ This document outlines the strategic roadmap for translating v4.0 HDT candidates
 - **Market Access**: Focus on Tiered Pricing for Gavi-supported countries.
 - **Regulatory**: WHO Prequalification for use as a "Global Essential Medicine."
 
+## 4. Risk Mitigation & Safety Framework 🛡️
+
+Targeting core inflammatory hubs like `IL1B` and `TNF` carries the risk of systemic immunosuppression and unintended bacterial dissemination. The following mitigation strategies are proposed:
+
+- **Timing of Intervention**: HDT should be initiated as **adjunctive therapy** only after the first dose of effective antibiotics (e.g., Ceftriaxone) to ensure extracellular bacteria are controlled while the HDT works to clear the intracellular niche.
+- **Short-Half Life Inhibitors**: Favor drugs with short half-lives (e.g., **Anakinra** for IL-1β) to allow rapid withdrawal if secondary infections appear.
+- **Pathogen-Specific Niche Focus**: Prioritizing targets like **NLRP3** (inflammasome sensor) or **VAC14** (vacuole maturation) over systemic cytokines to minimize global immune dampening.
+- **Clinical Monitoring**: Regular monitoring of CRP (C-reactive protein) and procalcitonin levels to titrate the HDT dose, preventing complete neutralization of the host response.
+
 ---
-> [!TIP]
-> **Strategic Edge**: By targeting the *Host* rather than the *Bacterium*, this therapy is naturally resilient to the rising threat of antimicrobial resistance (AMR), making it a critical tool for XDR-Typhoid outbreaks.
+> [!WARNING]
+> **Clinical Safety**: Host-directed therapy is an adjunctive, not monotherapy, strategy. Its success depends squarely on synchronized antimicrobial coverage.

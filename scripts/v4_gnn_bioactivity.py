@@ -74,40 +74,66 @@ def train_bioactivity_model():
     X = np.array(X)
     y = np.array(y).reshape(-1, 1)
     
-    # Split
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    # K-Fold Cross-Validation (Addressing Reviewer 1 Critique)
+    from sklearn.model_selection import KFold
+    k = 5
+    kf = KFold(n_splits=k, shuffle=True, random_state=42)
+    fold_mses = []
     
-    # Conver to Tensors
-    X_train_t = torch.FloatTensor(X_train)
-    y_train_t = torch.FloatTensor(y_train)
-    X_test_t = torch.FloatTensor(X_test)
-    y_test_t = torch.FloatTensor(y_test)
+    print(f"Starting {k}-Fold Cross-Validation...")
+    for fold, (train_idx, val_idx) in enumerate(kf.split(X)):
+        X_tr, X_val = torch.FloatTensor(X[train_idx]), torch.FloatTensor(X[val_idx])
+        y_tr, y_val = torch.FloatTensor(y[train_idx]), torch.FloatTensor(y[val_idx])
+        
+        # New Model for each fold
+        fold_model = BioactivityNet()
+        fold_crit = nn.MSELoss()
+        fold_opt = optim.Adam(fold_model.parameters(), lr=0.001)
+        
+        # Training
+        for ep in range(80):
+            fold_model.train()
+            fold_opt.zero_grad()
+            out = fold_model(X_tr)
+            loss = fold_crit(out, y_tr)
+            loss.backward()
+            fold_opt.step()
+            
+        # Eval
+        fold_model.eval()
+        with torch.no_grad():
+            val_out = fold_model(X_val)
+            v_loss = fold_crit(val_out, y_val)
+            fold_mses.append(v_loss.item())
+        print(f"  Fold {fold+1} MSE: {v_loss.item():.4f}")
+        
+    avg_mse = np.mean(fold_mses)
+    std_mse = np.std(fold_mses)
+    print(f"\nFinal CV Stats: Mean MSE = {avg_mse:.4f} (+/- {std_mse:.4f})")
     
-    # Initialize Model
+    # Final Model Training on Full Dataset
+    print("\nTraining Final Model on full dataset...")
+    X_t = torch.FloatTensor(X)
+    y_t = torch.FloatTensor(y)
+    
     model = BioactivityNet()
     criterion = nn.MSELoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     
-    # Training Loop
-    print("Training AI model...")
-    epochs = 100
-    for epoch in range(epochs):
+    for epoch in range(100):
         model.train()
         optimizer.zero_grad()
-        outputs = model(X_train_t)
-        loss = criterion(outputs, y_train_t)
+        outputs = model(X_t)
+        loss = criterion(outputs, y_t)
         loss.backward()
         optimizer.step()
         
-        if (epoch + 1) % 20 == 0:
-            print(f"Epoch {epoch+1}/{epochs}, Loss: {loss.item():.4f}")
-            
-    # Evaluation
+    # Evaluation on full set (In-sample for final pred)
     model.eval()
     with torch.no_grad():
-        test_outputs = model(X_test_t)
-        test_loss = criterion(test_outputs, y_test_t)
-        print(f"Final Test MSE: {test_loss.item():.4f}")
+        final_outputs = model(X_t)
+        final_loss = criterion(final_outputs, y_t)
+        print(f"Final In-sample MSE: {final_loss.item():.4f}")
         
     # Predict for all candidates to get "AI_Refined_pChEMBL"
     print("Generating AI-predicted affinities...")
