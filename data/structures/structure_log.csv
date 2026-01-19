@@ -1,0 +1,7 @@
+Gene,Structure_ID,Source,File_Path
+IL1B,1ITB,RCSB_PDB,data\structures\1ITB.pdb
+IL6,1ALU,RCSB_PDB,data\structures\1ALU.pdb
+TNF,1TNF,RCSB_PDB,data\structures\1TNF.pdb
+NLRP3,7PZW,RCSB_PDB,data\structures\7PZW.pdb
+MTOR,4IPH,RCSB_PDB,data\structures\4IPH.pdb
+IFNg,1HIG,RCSB_PDB,data\structures\1HIG.pdb
